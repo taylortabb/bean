@@ -9,7 +9,8 @@
 
 
 <body>
-<!-- Load Stripe.js on your website. -->
+
+  <!-- Load Stripe.js on your website. -->
 <script src="https://js.stripe.com/v3"></script>
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
@@ -26,7 +27,7 @@
 
 <script>
 (function() {
-  var stripe = Stripe('pk_live_51HLNyHAoSIw1nf26NtNTJJA5fQ1t73zRAlf8EDIAzO2JB8qSB1JCIEp9ex30xdM0026CYMhcZ5fJUaXccmKTzQllA00lCybfbcL');
+  var stripe = Stripe('pk_live_51HLNyHAoSIw1nf26NtNTJJA5fQ1t73zRAlf8EDIAzO2JB8qSB1JCIEp9ex30xdM0026CYMcZ5fJUaXccmKTzQllA00lCybfbcL');
 
   var checkoutButton = document.getElementById('checkout-button-price_1HuSaAAoSIw1nf26dKYFPazi');
   checkoutButton.addEventListener('click', function () {
@@ -40,8 +41,8 @@
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfill-orders
-      successUrl: window.location.protocol + '//www.tabb.me',
-      cancelUrl: window.location.protocol + '//www.tabb.me',
+      successUrl: 'https://your-website.com/success',
+      cancelUrl: 'https://your-website.com/canceled',
     })
     .then(function (result) {
       if (result.error) {
@@ -54,5 +55,6 @@
   });
 })();
 </script>
+  
 </body>
 </html>
